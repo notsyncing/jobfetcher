@@ -76,7 +76,8 @@ public class FetcherSWJTU extends FetcherBase
 				// Get location
 				String loc_url = CommonUtils.getHrefFromHtml(line).get(0);
 				UrlFetcher fetcher_loc = new UrlFetcher();
-				fetcher_loc.fetchUrl(CommonUtils.getAbsoluteUrl(url, loc_url), encoding);
+				String loc_url_abs = CommonUtils.getAbsoluteUrl(url, loc_url);
+				fetcher_loc.fetchUrl(loc_url_abs, encoding);
 				String loc = fetcher_loc.readLineUntilFirst("地点：");
 				String[] loc_data = CommonUtils.trimHtml(loc, "|").split("\\|");
 				j.setLocation("西南交通大学 " + loc_data[3]);
@@ -94,7 +95,7 @@ public class FetcherSWJTU extends FetcherBase
 				}
 				
 				String info_url = info_urls.get(0);
-				info_url = CommonUtils.getAbsoluteUrl(url, info_url);
+				info_url = CommonUtils.getAbsoluteUrl(loc_url_abs, info_url);
 				j.setInfo(info_url);
 					
 				fetcher_loc.close();
