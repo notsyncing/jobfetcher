@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>校园招聘信息</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/3rdparty/jquery.jsonrpc.js"></script>
+
+<script type="text/javascript" src="js/commons.js"></script>
+
+<script type="text/javascript" src="js/index.js"></script>
+
+<script type="text/javascript">
+$(function () {
+	on_page_load();
+});
+</script>
+
+<!-- Template area -->
+<div style="display:none">
+
+<div id="job_info_template" class="job_info">
+	<div>
+		<div class="time"></div>
+		<div class="name"></div>
+	</div>
+	<div class="location"></div>
+	<div><a href="" class="info"></a></div>
+</div>
+
+<div id="job_day_template" class="job_day">
+	<div class="date" onclick="on_job_day_clicked(this)"></div>
+	<div class="container"></div>
+</div>
+
+</div>
+
+<body>
+
+<div id="job_list">
+</div>
+
+</body>
+
+</html>

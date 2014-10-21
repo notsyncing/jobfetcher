@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.job_info {
+	margin-bottom: 1em;
+}
+
+.job_info .time {
+	display: inline-block;
+	vertical-align: middle;
+	background: #cccccc;
+	border: 1px;
+	border-radius: 5px;
+	padding: 0.2em;
+}
+
+.job_info .name {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.job_day {
+	margin-bottom: 2em;
+	border: 2px dashed gray;
+	border-radius: 10px;
+	margin: 1em;
+}
+
+.job_day .date {
+	font-size: 120%;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	background: #cccccc;
+	border-radius: 10px;
+}
+
+.job_day .container {
+	padding: 1em;
+	border-radius: 10px;
+}
