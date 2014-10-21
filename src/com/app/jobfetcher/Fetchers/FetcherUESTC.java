@@ -184,7 +184,9 @@ public class FetcherUESTC extends FetcherBase
 					continue;
 				}
 				
-				l.add(j);
+				if (!CommonUtils.hasJobName(l, j.getName())) {
+					l.add(j);
+				}
 			}
 			
 			fetcher.close();

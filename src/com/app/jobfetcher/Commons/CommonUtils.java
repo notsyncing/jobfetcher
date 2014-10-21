@@ -80,4 +80,15 @@ public class CommonUtils
 		URL abs = new URL(base, rel_url);
 		return abs.toString();
 	}
+	
+	public static boolean hasJobName(ArrayList<JobInfo> l, String name)
+	{
+		for (JobInfo j : l) {
+			if (j.getName().equals(name)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
