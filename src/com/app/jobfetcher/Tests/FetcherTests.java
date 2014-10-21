@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.app.jobfetcher.Commons.ErrorCode;
 import com.app.jobfetcher.Commons.JobInfo;
+import com.app.jobfetcher.Fetchers.FetcherSCU;
 import com.app.jobfetcher.Fetchers.FetcherSWJTU;
 import com.app.jobfetcher.Fetchers.FetcherUESTC;
 
@@ -27,7 +28,16 @@ public class FetcherTests
 	public void testFetcherUESTC()
 	{
 		assertEquals(FetcherUESTC.getInstance().doFetch(true), ErrorCode.SUCCESS);
-		ArrayList<JobInfo> l = FetcherSWJTU.getInstance().getJobList();
+		ArrayList<JobInfo> l = FetcherUESTC.getInstance().getJobList();
+		assertNotEquals(l, null);
+		assertNotEquals(l.size(), 0);
+	}
+	
+	@Test
+	public void testFetcherSCU()
+	{
+		assertEquals(FetcherSCU.getInstance().doFetch(true), ErrorCode.SUCCESS);
+		ArrayList<JobInfo> l = FetcherSCU.getInstance().getJobList();
 		assertNotEquals(l, null);
 		assertNotEquals(l.size(), 0);
 	}

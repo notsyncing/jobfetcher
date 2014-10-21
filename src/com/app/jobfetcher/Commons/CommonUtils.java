@@ -61,6 +61,8 @@ public class CommonUtils
 			return null;
 		}
 		
+		html = html.replace('\'', '"');
+		
 		ArrayList<String> urls = new ArrayList<String>();
 		
 		int start = 0, href_start, href_end;

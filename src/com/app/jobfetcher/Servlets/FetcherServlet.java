@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.jobfetcher.Fetchers.FetcherManager;
+import com.app.jobfetcher.Fetchers.FetcherSCU;
 import com.app.jobfetcher.Fetchers.FetcherSWJTU;
 import com.app.jobfetcher.Fetchers.FetcherUESTC;
 
@@ -42,6 +43,7 @@ public class FetcherServlet extends HttpServlet
 		// TODO: Add new fetchers here
 		fm.add(FetcherSWJTU.getInstance());
 		fm.add(FetcherUESTC.getInstance());
+		fm.add(FetcherSCU.getInstance());
 		
 		Timer t = new Timer();
 		t.scheduleAtFixedRate(new TimerTask() {
